@@ -16,3 +16,7 @@ C:\Users\Max\Documents\GitHub\Off-Campus-Housing-Database\OffCampusHousingDataba
 C:\Users\Max\Documents\GitHub\Off-Campus-Housing-Database\OffCampusHousingDatabase\OffCampusHousingDatabase\obj\Debug\OffCampusHousingDatabase.csproj.GenerateResource.Cache
 C:\Users\Max\Documents\GitHub\Off-Campus-Housing-Database\OffCampusHousingDatabase\OffCampusHousingDatabase\obj\Debug\OffCampusHousingDatabase.exe
 C:\Users\Max\Documents\GitHub\Off-Campus-Housing-Database\OffCampusHousingDatabase\OffCampusHousingDatabase\obj\Debug\OffCampusHousingDatabase.pdb
+C:\Users\Max\Documents\GitHub\Off-Campus-Housing-Database\OffCampusHousingDatabase\OffCampusHousingDatabase\obj\Debug\Login.baml
+C:\Users\Max\Documents\GitHub\Off-Campus-Housing-Database\OffCampusHousingDatabase\OffCampusHousingDatabase\obj\Debug\SignUp.baml
+C:\Users\Max\Documents\GitHub\Off-Campus-Housing-Database\OffCampusHousingDatabase\OffCampusHousingDatabase\obj\Debug\Login.g.cs
+C:\Users\Max\Documents\GitHub\Off-Campus-Housing-Database\OffCampusHousingDatabase\OffCampusHousingDatabase\obj\Debug\SignUp.g.cs

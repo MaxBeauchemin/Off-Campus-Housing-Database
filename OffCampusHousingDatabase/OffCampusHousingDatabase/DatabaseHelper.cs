@@ -72,7 +72,6 @@ namespace OffCampusHousingDatabase
 
         public void DatabaseUpdate(String tableName, String updateColumns, String whereClause)
         {
-
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
 
@@ -86,7 +85,6 @@ namespace OffCampusHousingDatabase
 
         private void DatabaseDelete(String tableName, String whereClause)
         {
-
             MySqlConnection conn = new MySqlConnection(connectionString);
             conn.Open();
 
