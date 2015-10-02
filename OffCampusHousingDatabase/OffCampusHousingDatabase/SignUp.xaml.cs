@@ -99,6 +99,24 @@ namespace OffCampusHousingDatabase
             //Switch back to other view without taking any action
 
         }
+
+        private void login_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login l = new Login();
+            App.Current.MainWindow = l;
+            this.Close();
+            l.Show();
+        }
+
+        private void login_MouseEnter(object sender, MouseEventArgs e)
+        {
+            loginTextblock.TextDecorations = TextDecorations.Underline;
+        }
+
+        private void login_MouseLeave(object sender, MouseEventArgs e)
+        {
+            loginTextblock.TextDecorations = null;
+        }
         
     }
 }

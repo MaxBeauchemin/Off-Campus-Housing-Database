@@ -1,7 +1,7 @@
 ﻿<Window x:Class="OffCampusHousingDatabase.Login"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Login" Height="301.343" Width="300">
+        Title="Login" Height="301.343" Width="300" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,-8,-1">
         <Label Content="Email: " HorizontalAlignment="Left" Margin="24,50,0,0" VerticalAlignment="Top"/>
         <Label Content="Password:" HorizontalAlignment="Left" Margin="24,92,0,0" VerticalAlignment="Top"/>
