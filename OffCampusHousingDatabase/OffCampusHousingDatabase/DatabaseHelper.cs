@@ -57,43 +57,67 @@ namespace OffCampusHousingDatabase
             return output;
         }
 
-        public void DatabaseInsert(String tableName, String Columns, String values)
+        public bool DatabaseInsert(String tableName, String Columns, String values)
         {
-            MySqlConnection conn = new MySqlConnection(connectionString);
-            conn.Open();
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(connectionString);
+                conn.Open();
 
-            String sql = "INSERT INTO `" + tableName + "`(" + Columns + ") VALUES (" + values + ")";
+                String sql = "INSERT INTO `" + tableName + "`(" + Columns + ") VALUES (" + values + ")";
 
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-            cmd.ExecuteReader();
-            conn.Close();
+                cmd.ExecuteReader();
+                conn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
-        public void DatabaseUpdate(String tableName, String updateColumns, String whereClause)
+        public bool DatabaseUpdate(String tableName, String updateColumns, String whereClause)
         {
-            MySqlConnection conn = new MySqlConnection(connectionString);
-            conn.Open();
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(connectionString);
+                conn.Open();
 
-            String sql = "UPDATE `" + tableName + "` SET " + updateColumns + " WHERE " + whereClause;
+                String sql = "UPDATE `" + tableName + "` SET " + updateColumns + " WHERE " + whereClause;
 
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-            cmd.ExecuteReader();
-            conn.Close();
+                cmd.ExecuteReader();
+                conn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
-        private void DatabaseDelete(String tableName, String whereClause)
+        private bool DatabaseDelete(String tableName, String whereClause)
         {
-            MySqlConnection conn = new MySqlConnection(connectionString);
-            conn.Open();
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(connectionString);
+                conn.Open();
 
-            String sql = "DELETE FROM `" + tableName + "` WHERE " + whereClause;
+                String sql = "DELETE FROM `" + tableName + "` WHERE " + whereClause;
 
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-            cmd.ExecuteReader();
-            conn.Close();
+                cmd.ExecuteReader();
+                conn.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }
