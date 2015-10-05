@@ -8,7 +8,7 @@
         <Label Content="Confirm:" HorizontalAlignment="Left" Margin="24,118,0,0" VerticalAlignment="Top"/>
 
         <TextBox x:Name="emailTextbox" HorizontalAlignment="Left" Height="21" Margin="91,55,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="183"/>
-        
+
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="91,97,0,0" Width="183" VerticalAlignment="Top" Height="21"/>
         <PasswordBox x:Name="passwordConfirmBox"  HorizontalAlignment="Left" Margin="91,123,0,0" Width="183" VerticalAlignment="Top" Height="21"/>
 
@@ -17,7 +17,7 @@
 
         <Button x:Name="SignupButton" Content="Sign Up" HorizontalAlignment="Left" Margin="91,225,0,0" VerticalAlignment="Top" Width="75" Click="signup_Click"/>
         <Button x:Name ="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="199,225,0,0" VerticalAlignment="Top" Width="75" Click="cancel_Click"/>
-        
+
         <TextBlock x:Name="StatusLabel" HorizontalAlignment="Left" Margin="24,265,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" Height="40" Foreground="Red"/>
         <TextBlock x:Name="loginTextblock" HorizontalAlignment="Left" Margin="24,329,0,0" TextWrapping="Wrap" Text="Already have an account? Login here!" VerticalAlignment="Top" Foreground="Blue" MouseEnter="login_MouseEnter" MouseLeave="login_MouseLeave" MouseDown="login_MouseDown" Cursor="Hand" FontStyle="Normal"/>
 
