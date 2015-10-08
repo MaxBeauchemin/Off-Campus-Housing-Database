@@ -21,6 +21,20 @@ namespace OffCampusHousingDatabase
             return DatabaseSelect(tableName, "");
         }
 
+        public String[] DatabaseSelectFirst(String tableName)
+        {
+            return DatabaseSelectFirst(tableName, "");
+        }
+
+        public String[] DatabaseSelectFirst(String tableName, String whereClause)
+        {
+            ArrayList arr = DatabaseSelect(tableName, whereClause);
+            foreach(String[] row in arr){
+                return row;
+            }
+            return null;
+        }
+
 
         //Sample Call: ArrayList arr = dbHelper.DatabaseSelect("User", "`email` = '" + EmailTextbox.Text + "' AND `password` = '" + pw + "'");
         public ArrayList DatabaseSelect(String tableName, String whereClause)

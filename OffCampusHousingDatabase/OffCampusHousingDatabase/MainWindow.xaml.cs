@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
 
 namespace OffCampusHousingDatabase
 {
@@ -22,12 +23,17 @@ namespace OffCampusHousingDatabase
     {
         bool loggedOn;
         String email;
+        DatabaseHelper dbHelper;
 
         public MainWindow()
         {
             InitializeComponent();
             loggedOn = false;
             email = "";
+
+            dbHelper = new DatabaseHelper(ConfigurationManager.ConnectionStrings["MySQLDB"].ConnectionString);
+
+            loadAllProperties();
         }
 
         public MainWindow(String email)
@@ -40,6 +46,8 @@ namespace OffCampusHousingDatabase
             LoginTextblock.Text = email;
             OrTextblock.Text = "";
             SignupTextblock.Text = "";
+
+            loadAllProperties();
 
         }
 
@@ -77,6 +85,45 @@ namespace OffCampusHousingDatabase
         private void signup_MouseLeave(object sender, MouseEventArgs e)
         {
             SignupTextblock.TextDecorations = null;
+        }
+
+        private void Property_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (PropertyListView.SelectedIndex < 0)
+                return;
+
+            PropertyItem n = (PropertyItem)PropertyListView.SelectedItem;
+
+            PropertyDescription pd = new PropertyDescription(n.PropID);
+            App.Current.MainWindow = pd;
+            this.Close();
+            pd.Show();
+        }
+
+
+        private void loadAllProperties()
+        {
+            ArrayList rows = dbHelper.DatabaseSelect("Property");
+
+            foreach (String[] row in rows)
+            {
+                PropertyListView.Items.Add(new PropertyItem { PropID = Convert.ToInt32(row[0]), Addr = row[1], Rent = Convert.ToInt32(row[4]), RealData = Convert.ToInt32(row[5]) });
+            }
+
+
+            
+        }
+
+
+
+
+
+        private class PropertyItem
+        {
+            public int PropID { get; set; }
+            public string Addr { get; set; }
+            public int Rent { get; set; }
+            public int RealData { get; set; }
         }
     }
 }
