@@ -20,5 +20,3 @@ C:\Users\Max\Documents\GitHub\Off-Campus-Housing-Database\OffCampusHousingDataba
 C:\Users\Max\Documents\GitHub\Off-Campus-Housing-Database\OffCampusHousingDatabase\OffCampusHousingDatabase\obj\Debug\SignUp.baml
 C:\Users\Max\Documents\GitHub\Off-Campus-Housing-Database\OffCampusHousingDatabase\OffCampusHousingDatabase\obj\Debug\Login.g.cs
 C:\Users\Max\Documents\GitHub\Off-Campus-Housing-Database\OffCampusHousingDatabase\OffCampusHousingDatabase\obj\Debug\SignUp.g.cs
-C:\Users\Max\Documents\GitHub\Off-Campus-Housing-Database\OffCampusHousingDatabase\OffCampusHousingDatabase\obj\Debug\Window1.baml
-C:\Users\Max\Documents\GitHub\Off-Campus-Housing-Database\OffCampusHousingDatabase\OffCampusHousingDatabase\obj\Debug\Window1.g.cs

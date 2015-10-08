@@ -57,14 +57,14 @@ namespace OffCampusHousingDatabase
             return output;
         }
 
-        public bool DatabaseInsert(String tableName, String Columns, String values)
+        public bool DatabaseInsert(String tableName, String Columns, String Values)
         {
             try
             {
                 MySqlConnection conn = new MySqlConnection(connectionString);
                 conn.Open();
 
-                String sql = "INSERT INTO `" + tableName + "`(" + Columns + ") VALUES (" + values + ")";
+                String sql = "INSERT INTO `" + tableName + "`(" + Columns + ") VALUES (" + Values + ")";
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 

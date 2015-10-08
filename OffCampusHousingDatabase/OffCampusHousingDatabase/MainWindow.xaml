@@ -1,4 +1,12 @@
 ﻿<Window x:Class="OffCampusHousingDatabase.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Main Window" Height="200" Width="400" Background="White" WindowStyle="ThreeDBorderWindow"/>
+        Title="Rent Oshkosh" Height="450" Width="800" Background="White" WindowStyle="ThreeDBorderWindow" ResizeMode="NoResize">
+    <Grid HorizontalAlignment="Left" Height="450" Width="800" Margin="0,0,0,0" VerticalAlignment="Top">
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="48" Stroke="Black" VerticalAlignment="Top" Width="818" Margin="-18,0,0,0"/>
+
+        <TextBlock x:Name="LoginTextblock" HorizontalAlignment="Left" Margin="624,13,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Foreground="Blue" MouseEnter="login_MouseEnter" MouseLeave="login_MouseLeave" MouseDown="login_MouseDown" Cursor="Hand" FontStyle="Normal"/>
+        <TextBlock x:Name="SignupTextblock" HorizontalAlignment="Left" Margin="718,13,0,0" TextWrapping="Wrap" Text="Sign up" VerticalAlignment="Top" Foreground="Blue" MouseEnter="signup_MouseEnter" MouseLeave="signup_MouseLeave" MouseDown="signup_MouseDown" Cursor="Hand" FontStyle="Normal"/>
+        <TextBlock x:Name="OrTextblock" HorizontalAlignment="Left" Margin="683,13,0,0" TextWrapping="Wrap" Text="or" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

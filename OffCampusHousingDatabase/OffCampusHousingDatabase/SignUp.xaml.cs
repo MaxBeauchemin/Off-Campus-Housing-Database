@@ -77,12 +77,12 @@ namespace OffCampusHousingDatabase
                 //Insert the email and user info
                 if (dbHelper.DatabaseInsert("User", "`email`, `password`, `isManager`", "'" + emailTextbox.Text + "','" + pw + "','" + isManager + "'"))
                 {
+
                     //successfully inserted, switch views and update the global user email variable
-
-
-                    //remove this when implementing
-                    StatusLabel.Text = "yay";
-
+                    MainWindow m = new MainWindow(emailTextbox.Text);
+                    App.Current.MainWindow = m;
+                    this.Close();
+                    m.Show();
 
 
                 }
@@ -96,8 +96,11 @@ namespace OffCampusHousingDatabase
 
         private void cancel_Click(object sender, RoutedEventArgs e)
         {
-            //Switch back to other view without taking any action
-
+            //switch back to main view taking no other action
+            MainWindow m = new MainWindow();
+            App.Current.MainWindow = m;
+            this.Close();
+            m.Show();
         }
 
         private void login_MouseDown(object sender, MouseButtonEventArgs e)

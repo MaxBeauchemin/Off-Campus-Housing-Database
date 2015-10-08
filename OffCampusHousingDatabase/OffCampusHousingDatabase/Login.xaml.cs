@@ -57,17 +57,21 @@ namespace OffCampusHousingDatabase
 
 
             //Authenticated Successfully
-
-
-            //remove this code here
-            StatusLabel.Text = "Yay";
+            MainWindow m = new MainWindow(EmailTextbox.Text);
+            App.Current.MainWindow = m;
+            this.Close();
+            m.Show();
 
 
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-
+            //switch back to main view taking no other action
+            MainWindow m = new MainWindow();
+            App.Current.MainWindow = m;
+            this.Close();
+            m.Show();
         }
 
         private void signup_MouseDown(object sender, MouseButtonEventArgs e)
