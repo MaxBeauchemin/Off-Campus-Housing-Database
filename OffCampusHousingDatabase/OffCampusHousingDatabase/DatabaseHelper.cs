@@ -16,10 +16,6 @@ namespace OffCampusHousingDatabase
             this.connectionString = connectionString;
         }
 
-        public ArrayList DatabaseSelect(String tableName)
-        {
-            return DatabaseSelect(tableName, "");
-        }
 
         public String[] DatabaseSelectFirst(String tableName)
         {
@@ -35,6 +31,10 @@ namespace OffCampusHousingDatabase
             return null;
         }
 
+        public ArrayList DatabaseSelect(String tableName)
+        {
+            return DatabaseSelect(tableName, "");
+        }
 
         //Sample Call: ArrayList arr = dbHelper.DatabaseSelect("User", "`email` = '" + EmailTextbox.Text + "' AND `password` = '" + pw + "'");
         public ArrayList DatabaseSelect(String tableName, String whereClause)
@@ -78,7 +78,7 @@ namespace OffCampusHousingDatabase
             {
                 ErrorLogger el = new ErrorLogger();
                 el.LogError("DatabaseHelper : DatabaseSelect", ex.Message);
-                return null;
+                return new ArrayList();
             }
         }
 

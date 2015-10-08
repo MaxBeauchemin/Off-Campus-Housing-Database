@@ -43,5 +43,13 @@ namespace OffCampusHousingDatabase
             RealTextBlock.Text = row[5];
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow m = new MainWindow();
+            App.Current.MainWindow = m;
+            this.Close();
+            m.Show();
+        }
     }
 }

@@ -8,16 +8,23 @@
         <TextBlock x:Name="LoginTextblock" HorizontalAlignment="Left" Margin="624,13,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Foreground="Blue" MouseEnter="login_MouseEnter" MouseLeave="login_MouseLeave" MouseDown="login_MouseDown" Cursor="Hand" FontStyle="Normal"/>
         <TextBlock x:Name="SignupTextblock" HorizontalAlignment="Left" Margin="718,13,0,0" TextWrapping="Wrap" Text="Sign up" VerticalAlignment="Top" Foreground="Blue" MouseEnter="signup_MouseEnter" MouseLeave="signup_MouseLeave" MouseDown="signup_MouseDown" Cursor="Hand" FontStyle="Normal"/>
         <TextBlock x:Name="OrTextblock" HorizontalAlignment="Left" Margin="683,13,0,0" TextWrapping="Wrap" Text="or" VerticalAlignment="Top"/>
-        
+
         <ListView x:Name="PropertyListView" HorizontalAlignment="Left" Height="294" Margin="10,112,0,0" VerticalAlignment="Top" Width="576" MouseDoubleClick="Property_Click">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Property ID" DisplayMemberBinding="{Binding PropID}" Width="80"/>
                     <GridViewColumn Header="Address" DisplayMemberBinding="{Binding Addr}" Width="150"/>
                     <GridViewColumn Header="Monthly Rent" DisplayMemberBinding="{Binding Rent}" Width="100"/>
                     <GridViewColumn Header="Real Data" DisplayMemberBinding="{Binding RealData}" Width="100"/>
                 </GridView>
             </ListView.View>
         </ListView>
+
+
+        <Label Content="Filters" HorizontalAlignment="Left" Margin="668,127,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rent Less Than " HorizontalAlignment="Left" Margin="617,176,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="FilterRentTextbox" HorizontalAlignment="Left" Height="23" Margin="709,179,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="67"/>
+        <Button x:Name="FilterButton"  Content="Filter" HorizontalAlignment="Left" Margin="652,251,0,0" VerticalAlignment="Top" Width="75" Click="FilterButton_Click"/>
+
+
     </Grid>
 </Window>

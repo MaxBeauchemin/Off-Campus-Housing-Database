@@ -42,6 +42,8 @@ namespace OffCampusHousingDatabase
             loggedOn = true;
             this.email = email;
 
+            dbHelper = new DatabaseHelper(ConfigurationManager.ConnectionStrings["MySQLDB"].ConnectionString);
+
             //Show on the UI that the user is logged on, and hide the Login, Or, and Signup textblocks
             LoginTextblock.Text = email;
             OrTextblock.Text = "";
@@ -100,9 +102,16 @@ namespace OffCampusHousingDatabase
             pd.Show();
         }
 
+        private void FilterButton_Click(object sender, RoutedEventArgs e)
+        {
+            loadFilteredProperties();
+        }
+
 
         private void loadAllProperties()
         {
+            PropertyListView.Items.Clear();
+
             ArrayList rows = dbHelper.DatabaseSelect("Property");
 
             foreach (String[] row in rows)
@@ -110,12 +119,20 @@ namespace OffCampusHousingDatabase
                 PropertyListView.Items.Add(new PropertyItem { PropID = Convert.ToInt32(row[0]), Addr = row[1], Rent = Convert.ToInt32(row[4]), RealData = Convert.ToInt32(row[5]) });
             }
 
-
-            
         }
 
+        private void loadFilteredProperties()
+        {
+            PropertyListView.Items.Clear();
 
+            ArrayList rows = dbHelper.DatabaseSelect("Property", "`MonthlyRent` < '" + FilterRentTextbox.Text + "'");
 
+            foreach (String[] row in rows)
+            {
+                PropertyListView.Items.Add(new PropertyItem { PropID = Convert.ToInt32(row[0]), Addr = row[1], Rent = Convert.ToInt32(row[4]), RealData = Convert.ToInt32(row[5]) });
+            }
+
+        }
 
 
         private class PropertyItem
@@ -125,5 +142,7 @@ namespace OffCampusHousingDatabase
             public int Rent { get; set; }
             public int RealData { get; set; }
         }
+
+        
     }
 }
