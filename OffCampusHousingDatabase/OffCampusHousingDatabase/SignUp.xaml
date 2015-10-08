@@ -20,10 +20,10 @@
         <Button x:Name="SignupButton" Content="Sign Up" HorizontalAlignment="Left" Margin="91,225,0,0" VerticalAlignment="Top" Width="75" Click="signup_Click"/>
         <Button x:Name ="CancelButton" Content="Cancel" HorizontalAlignment="Left" Margin="199,225,0,0" VerticalAlignment="Top" Width="75" Click="cancel_Click"/>
 
-        <TextBlock x:Name="StatusLabel" HorizontalAlignment="Left" Margin="24,265,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" Height="40" Foreground="Red"/>
+        <TextBlock x:Name="StatusLabel" HorizontalAlignment="Left" Margin="24,295,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" Height="40" Foreground="Red"/>
         <TextBlock x:Name="loginTextblock" HorizontalAlignment="Left" Margin="24,329,0,0" TextWrapping="Wrap" Text="Already have an account? Login here!" VerticalAlignment="Top" Foreground="Blue" MouseEnter="login_MouseEnter" MouseLeave="login_MouseLeave" MouseDown="login_MouseDown" Cursor="Hand" FontStyle="Normal"/>
 
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="35" Stroke="Black" VerticalAlignment="Top" Width="300"/>
+        <Rectangle Fill="#FF90BCFD" HorizontalAlignment="Left" Height="35" Stroke="Black" VerticalAlignment="Top" Width="300"/>
         <TextBlock HorizontalAlignment="Left" Margin="137,9,0,0" TextWrapping="Wrap" Text="Sign Up" VerticalAlignment="Top"/>
 
     </Grid>

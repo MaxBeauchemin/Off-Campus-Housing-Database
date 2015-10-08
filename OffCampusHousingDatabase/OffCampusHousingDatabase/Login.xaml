@@ -19,7 +19,7 @@
         <TextBlock x:Name="StatusLabel" HorizontalAlignment="Left" Margin="24,200,0,0" VerticalAlignment="Top" Foreground="Red"/>
         <TextBlock x:Name="SignupTextblock" HorizontalAlignment="Left" Margin="24,236,0,0" TextWrapping="Wrap" Text="Don't have an account? Sign up here!" VerticalAlignment="Top" Foreground="Blue" MouseEnter="signup_MouseEnter" MouseLeave="signup_MouseLeave" MouseDown="signup_MouseDown" Cursor="Hand" FontStyle="Normal"/>
 
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="35" Stroke="Black" VerticalAlignment="Top" Width="300"/>
+        <Rectangle Fill="#FF90BCFD" HorizontalAlignment="Left" Height="35" Stroke="Black" VerticalAlignment="Top" Width="300"/>
         <TextBlock HorizontalAlignment="Left" Margin="137,9,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top"/>
         
     </Grid>
