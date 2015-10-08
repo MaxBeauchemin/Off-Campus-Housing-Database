@@ -21,42 +21,54 @@ namespace OffCampusHousingDatabase
             return DatabaseSelect(tableName, "");
         }
 
+
+        //Sample Call: ArrayList arr = dbHelper.DatabaseSelect("User", "`email` = '" + EmailTextbox.Text + "' AND `password` = '" + pw + "'");
         public ArrayList DatabaseSelect(String tableName, String whereClause)
         {
-            MySqlConnection conn = new MySqlConnection(connectionString);
-            conn.Open();
-
-            String sql = "SELECT * FROM `" + tableName + "` ";
-
-            if (!whereClause.Equals(""))
+            try
             {
-                sql += " WHERE " + whereClause;
-            }
+                MySqlConnection conn = new MySqlConnection(connectionString);
+                conn.Open();
 
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
+                String sql = "SELECT * FROM `" + tableName + "` ";
 
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            //number of columns
-            int numCols = reader.FieldCount;
-
-            ArrayList output = new ArrayList();
-
-            while (reader.Read())
-            {
-                String[] row = new String[numCols];
-                for (int i = 0; i < numCols; i++)
+                if (!whereClause.Equals(""))
                 {
-                    row[i] = (reader.GetString(i));
+                    sql += " WHERE " + whereClause;
                 }
-                output.Add(row);
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                //number of columns
+                int numCols = reader.FieldCount;
+
+                ArrayList output = new ArrayList();
+
+                while (reader.Read())
+                {
+                    String[] row = new String[numCols];
+                    for (int i = 0; i < numCols; i++)
+                    {
+                        row[i] = (reader.GetString(i));
+                    }
+                    output.Add(row);
+                }
+
+                conn.Close();
+
+                return output;
             }
-
-            conn.Close();
-
-            return output;
+            catch (Exception ex)
+            {
+                ErrorLogger el = new ErrorLogger();
+                el.LogError("DatabaseHelper : DatabaseSelect", ex.Message);
+                return null;
+            }
         }
 
+        //Sample Call: dbHelper.DatabaseInsert("User", "`email`, `password`, `isManager`", "'" + emailTextbox.Text + "','" + pw + "','" + isManager + "'");
         public bool DatabaseInsert(String tableName, String Columns, String Values)
         {
             try

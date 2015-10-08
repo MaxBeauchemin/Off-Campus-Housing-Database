@@ -61,8 +61,6 @@ namespace OffCampusHousingDatabase
             App.Current.MainWindow = m;
             this.Close();
             m.Show();
-
-
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
